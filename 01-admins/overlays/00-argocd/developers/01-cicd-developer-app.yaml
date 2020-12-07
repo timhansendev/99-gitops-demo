@@ -9,8 +9,8 @@ spec:
   project: demo-apps
   source:
     path: 02-developers/overlays/cicd
-    repoURL: https://github.com/pittar-gitops/99-gitops-demo.git
-    targetRevision: master
+    repoURL: https://github.com/timhansendev/99-gitops-demo.git
+    targetRevision: development
   syncPolicy:
     automated:
       prune: false
