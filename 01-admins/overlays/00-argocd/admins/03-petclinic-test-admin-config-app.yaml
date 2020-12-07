@@ -10,7 +10,7 @@ spec:
   source:
     path: 01-admins/overlays/03-petclinic-test-admin-config
     repoURL: https://github.com/timhansendev/99-gitops-demo.git
-    targetRevision: master
+    targetRevision: development
   syncPolicy:
     automated:
       prune: false
