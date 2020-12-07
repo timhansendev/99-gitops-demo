@@ -15,7 +15,7 @@ spec:
   source:
     git:
       ref: gitops-demo
-      uri: https://github.com/pittar/spring-petclinic.git
+      uri: https://github.com/timhansendev/spring-petclinic
     type: Git
   strategy:
     jenkinsPipelineStrategy:
@@ -23,7 +23,7 @@ spec:
       - name: APP_NAME
         value: petclinic
       - name: GIT_SOURCE_URL
-        value: https://github.com/pittar/spring-petclinic.git
+        value: https://github.com/timhansendev/spring-petclinic
       - name: GIT_SOURCE_REF
         value: gitops-demo
       jenkinsfilePath: Jenkinsfile

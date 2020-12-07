@@ -10,9 +10,13 @@ oc apply -k 00-setup/argocd-operator
 echo "Pause 10 seconds for the creation of the InstallPlan."
 sleep 10
 
+oc get installplan -n argocd
+
 echo "Approving operator installation."
 IPNAME=$(oc get installplan -n argocd -o jsonpath='{range .items[*].metadata}{.name}{end}')
+
 echo "($IPNAME)"
+
 oc patch -n argocd installplan $IPNAME --type=json -p='[{"op":"replace","path": "/spec/approved", "value": true}]'
 
 echo "Pausing for 10 seconds for operator initialization..."
@@ -24,14 +28,13 @@ oc rollout status deploy/argocd-operator -n argocd
 echo "Listing Argo CD CRDs."
 oc get crd | grep argo
 
-
 echo "Deploying Argo CD instance"
 
 oc apply -k 00-setup/argocd
 
 echo "Waiting for Argo CD server to start..."
 
-sleep 15
+sleep 30
 
 oc rollout status deploy/argocd-server -n argocd
 

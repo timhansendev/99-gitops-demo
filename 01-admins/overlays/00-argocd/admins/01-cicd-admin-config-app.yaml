@@ -9,7 +9,7 @@ spec:
   project: demo-config
   source:
     path: 01-admins/overlays/01-cicd-admin-config
-    repoURL: https://github.com/pittar-gitops/99-gitops-demo.git
+    repoURL: https://github.com/timhansendev/99-gitops-demo.git
     targetRevision: master
   syncPolicy:
     automated:
