@@ -14,7 +14,7 @@ spec:
   runPolicy: Serial
   source:
     git:
-      ref: main
+      ref: gitops-demo
       uri: https://github.com/timhansendev/spring-petclinic
     type: Git
   strategy:
@@ -25,7 +25,7 @@ spec:
       - name: GIT_SOURCE_URL
         value: https://github.com/timhansendev/spring-petclinic
       - name: GIT_SOURCE_REF
-        value: main
+        value: gitops-demo
       jenkinsfilePath: Jenkinsfile
     type: JenkinsPipeline
   successfulBuildsHistoryLimit: 5
